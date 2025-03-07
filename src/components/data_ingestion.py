@@ -23,8 +23,10 @@ class DataIngestion:
             df = pd.read_csv('notebook\data\StudentsPerformance.csv')
             logging.info("Read the dataset as dataframe")
             
+            # create artifacts folder if it doesn’t exist
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok = True)
             
+            # save the raw dataset in artifacts/data.csv
             df.to_csv(self.ingestion_config.raw_data_path, index = False, header = True)
             
             logging.info("Train test split initiated")
