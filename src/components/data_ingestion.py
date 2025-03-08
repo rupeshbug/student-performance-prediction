@@ -16,6 +16,7 @@ class DataIngestionConfig:
     
 class DataIngestion:
     def __init__(self):
+        # creating instance of the DataIngestionConfig class so that every method inside the DataIngestion class can easily access the file paths defined in DataIngestionConfig
         self.ingestion_config = DataIngestionConfig()
         
     def initiate_data_ingestion(self):
