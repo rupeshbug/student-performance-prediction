@@ -43,6 +43,13 @@ class DataTransformation:
             
             logging.info("Numerical columns standard scaling completed")
             logging.info("Categorical columns encoding completed")
+            
+            preprocessor = ColumnTransformer(
+                [
+                    ("numerical_pipeline", numerical_pipeline, numerical_columns),
+                    ("categorical_pipeline", categorical_pipeline, categorical_columns)
+                ],
+            )
         except:
             pass
 
