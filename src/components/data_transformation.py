@@ -12,6 +12,8 @@ from sklearn.preprocessing import OneHotEncoder,StandardScaler
 from src.exception import CustomException
 from src.logger import logging
 
+from src.utils import save_object
+
 # DataTransformationConfig provides input to the DataTransformation component
 @dataclass
 class DataTransformationConfig:
@@ -74,6 +76,34 @@ class DataTransformation:
             
             input_feature_train_df = train_df.drop(columns = [target_column_name], axis = 1)
             target_feature_train_df = train_df[target_column_name]
+            
+            input_feature_test_df = test_df.drop(columns = [target_column_name], axis = 1)
+            target_feature_test_df = test_df[target_column_name]
+            
+            logging.info(f"Applying preprocessing object on training and testing dataframe")
+            
+            input_feature_train_arr = preprocessor_obj.fit_transform(input_feature_train_df)
+            input_feature_test_arr = preprocessor_obj.transform(input_feature_test_df)
+            
+            train_arr = np.c_[
+                input_feature_train_arr, np.arr(target_feature_train_df)
+            ]
+            test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
+            
+            logging.info(f"Saved preprocessing object.")
+            
+            save_object(
+
+                file_path=self.data_transformation_config.preprocessor_obj_file_path,
+                obj=preprocessing_obj
+
+            )
+
+            return (
+                train_arr,
+                test_arr,
+                self.data_transformation_config.preprocessor_obj_file_path,
+            )
         except:
             pass
 
