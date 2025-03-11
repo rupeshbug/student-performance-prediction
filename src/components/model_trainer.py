@@ -53,7 +53,7 @@ class ModelTrainer:
             # get the best model score from the dictionary
             best_model_score = max(sorted(model_report.values()))
             
-            # get the best model name from the dict
+            # get the best model name from the dictionary
             best_model_name = list(model_report.keys())[
                 list(model_report.values()).index(best_model_score)
             ]
