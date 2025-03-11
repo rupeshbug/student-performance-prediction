@@ -1,1 +1,41 @@
-<h1>Welcome to the home page</h1>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 75px 50px;
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+      }
+      .btn {
+        background-color: rgb(45, 185, 169);
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 20px;
+      }
+      .btn:hover {
+        background-color: rgb(34, 155, 135);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the Student Performance Predictor</h1>
+      <p>Click the button below to predict your exam performance.</p>
+      <a href="/predictdata" class="btn">Go to Prediction Page</a>
+    </div>
+  </body>
+</html>
