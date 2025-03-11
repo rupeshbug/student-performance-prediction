@@ -11,3 +11,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/predictdata', method = ["GET", "POST"])
+def predict_datapoint():
+    if request.method == "GET":
+        return render_template('home.html')
+    else:
+        pass
