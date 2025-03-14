@@ -11,6 +11,6 @@ This is a machine learning project that predicts students' performance based on 
 ### Technologies Used
 - **Python**: Programming language used for developing the model and web application.
 - **Flask**: Framework used for creating the web application.
-- **Scikit-learn**: Machine learning library used for building and evaluating models.
+- **Scikit-learn**: Machine learning library used for building and evaluating the models.
 - **Pandas & Numpy**: Libraries for data manipulation and analysis.
 - **Matplotlib & Seaborn**: Libraries for data visualization.
