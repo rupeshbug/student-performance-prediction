@@ -24,7 +24,8 @@ class PredictPipeline:
             raise CustomException(e, sys)
             
     
-# to map the input in the frontend (html page) to the backend
+# to map the input (input's structure) in the frontend to the backend
+
 class CustomData:
     def __init__(self, 
         gender: str,
