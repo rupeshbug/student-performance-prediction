@@ -11,6 +11,8 @@ from sklearn.model_selection import GridSearchCV
 
 from src.exception import CustomException
 
+# function to save the pickle file
+
 def save_object(file_path, obj):
     try:
         dir_path = os.path.dirname(file_path)
@@ -23,7 +25,9 @@ def save_object(file_path, obj):
     except Exception as e:
         raise CustomException(e, sys)
     
-    
+
+# function to train and evaluate the model
+
 def evaluate_models(X_train, y_train, X_test, y_test, models, param):
     try:
         report = {}
@@ -53,6 +57,8 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
     except Exception as e:
         raise CustomException(e, sys)
     
+# function to load the object (model)
+
 def load_object(file_path):
     try:
         with open(file_path, "rb") as file_obj:
