@@ -49,6 +49,7 @@ class DataTransformation:
             logging.info(f"Categorical columns: {categorical_columns}")
             logging.info(f"Numerical columns: {numerical_columns}")
             
+            # ColumnTransformer allows us to apply different transformation or preprocessing steps to different features/columnns in a single step
             preprocessor = ColumnTransformer(
                 [
                     ("numerical_pipeline", numerical_pipeline, numerical_columns),
